@@ -14,6 +14,9 @@ for package in "${packages[@]}"; do
 	/home/linuxbrew/.linuxbrew/bin/brew install "$package"
 done
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+chsh -s $(which zsh)
+
 echo "All packages have been installed."
 
 # Set up XDG_CONFIG_HOME
