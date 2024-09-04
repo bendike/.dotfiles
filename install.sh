@@ -1,6 +1,7 @@
 #!/bin/bash
 
 packages=(
+	zsh
 	stow
 	lazygit
 	nvim
