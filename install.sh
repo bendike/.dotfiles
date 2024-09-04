@@ -1,21 +1,22 @@
 #!/bin/bash
 
-packages=(
-	zsh
-	fzf
-	stow
-	lazygit
-	nvim
-	tmux
-)
+# packages=(
+# 	zsh
+# 	fzf
+# 	stow
+# 	lazygit
+# 	nvim
+# 	tmux
+# )
+#
+# # Iterate over the array and install each package
+# for package in "${packages[@]}"; do
+# 	echo "Installing $package..."
+# 	/home/linuxbrew/.linuxbrew/bin/brew install "$package"
+# done
 
-# Iterate over the array and install each package
-for package in "${packages[@]}"; do
-	echo "Installing $package..."
-	/home/linuxbrew/.linuxbrew/bin/brew install "$package"
-done
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Install Nix packages from config.nix
+nix-env -iA nixpkgs.myPackages
 
 echo "All packages have been installed."
 
@@ -24,7 +25,9 @@ export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"
 
 # Create symlinks for existing configurations
-stow --adopt *
+stow nvim
+stow tmux
+stow --adopt zsh
 git restore .
 
 echo "Setup complete."
