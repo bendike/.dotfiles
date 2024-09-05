@@ -6,7 +6,7 @@
         neovim
         fzf
         lazygit
-      ];
+      ]
     };
   };
 }
