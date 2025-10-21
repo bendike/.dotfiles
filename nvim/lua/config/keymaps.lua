@@ -8,6 +8,9 @@ local del = vim.keymap.del
 map("n", "<leader><tab>t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>T", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
+-- Open oil.nvim
+map("n", "<leader>o", "<cmd>Oil<cr>", { desc = "Open parent directory" })
+
 -- Unmap annoying move on esc
 del({ "n", "i", "v" }, "<A-j>")
 del({ "n", "i", "v" }, "<A-k>")

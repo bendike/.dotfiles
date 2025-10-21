@@ -65,12 +65,13 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+export FZF_BASE="/home/linuxbrew/.linuxbrew/opt/fzf"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git oc asdf vi-mode per-directory-history fzf)
+plugins=(git oc asdf vi-mode per-directory-history fzf kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,12 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 alias vim="nvim"
+alias vimc="nvim ~/.config/nvim/"
 alias lg="lazygit"
-
-source ~/.zsh_env_vars
-
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:$HOME/nvim-linux-x86_64/bin"
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -117,3 +117,5 @@ autoload -Uz compinit && compinit
 
 # Created by `pipx` on 2024-08-19 12:49:16
 export PATH="$PATH:/home/bendike/.local/bin"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
