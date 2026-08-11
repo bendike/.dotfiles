@@ -4,14 +4,17 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       servers = {
-        basedpyright = {
+        tsserver = {
           settings = {
-            basedpyright = {
-              disableOrganizeImports = true,
-              analysis = {
-                typeCheckingMode = "basic",
-                diagnosticMode = "openFilesOnly",
-                useLibraryCodeForTypes = true,
+            typescript = {
+              preferences = {
+                -- Disable alias preservation
+                useAliasesForRenames = false,
+              },
+            },
+            javascript = {
+              preferences = {
+                useAliasesForRenames = false,
               },
             },
           },

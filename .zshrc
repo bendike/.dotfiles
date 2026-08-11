@@ -103,7 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+#
+set -a; source ~/.env; set +a
 
 alias vim="nvim"
 alias vimc="nvim ~/.config/nvim/"
@@ -119,3 +120,7 @@ autoload -Uz compinit && compinit
 export PATH="$PATH:/home/bendike/.local/bin"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+export EDITOR=vim

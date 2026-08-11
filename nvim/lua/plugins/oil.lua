@@ -23,9 +23,6 @@ return {
     win_options = {
       winbar = "%!v:lua.get_oil_winbar()",
     },
-    lsp_file_methods = {
-      enabled = false,
-    },
   },
   -- Optional dependencies
   -- dependencies = { { "nvim-mini/mini.icons", opts = {} } },
