@@ -12,7 +12,13 @@ vim.diagnostic.config({
 vim.g.lazyvim_python_lsp = "ty"
 vim.g.lazyvim_python_ruff = "ruff"
 
-vim.g.python3_prog_host = "/Users/bendike/.asdf/shims/python3"
+local pynvim_host = vim.fn.expand("~/.asdf/shims/python3")
+if vim.fn.executable(pynvim_host) == 1 then
+  vim.g.python3_host_prog = pynvim_host
+end
+
+-- LSP for ts
+vim.g.lazyvim_ts_lsp = "tsgo"
 
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
